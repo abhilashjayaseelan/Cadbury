@@ -20,6 +20,8 @@ const Header = (props: user) => {
       pr={{base: "10px", md: "40px"}}
       justify="space-between"
       alignItems="center"
+      border="1px"
+      borderColor="gray.300"
     >
       <Box>
         <Image sx={logo} src="data/img/logo-L.jpg" alt="logo"/>

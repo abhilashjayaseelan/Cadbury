@@ -1,10 +1,9 @@
+import { Box } from "@chakra-ui/react"
 
 
 const Products = () => {
   return (
-    <div>
-      this is the product page...
-    </div>
+    <Box p='30px'>This is the Products Page</Box>
   )
 }
 
