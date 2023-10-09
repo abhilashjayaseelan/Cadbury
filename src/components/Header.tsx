@@ -1,4 +1,4 @@
-import { Avatar, Box, Flex, HStack, Icon, Image, Text, Wrap, WrapItem } from "@chakra-ui/react";
+import { Avatar, Box, Flex, HStack, Icon, Image, Text} from "@chakra-ui/react";
 import {MdSettings} from "react-icons/md";
 
 interface user {
@@ -16,8 +16,8 @@ const Header = (props: user) => {
     <Flex
       as="header"
       p="10px"
-      pl="40px"
-      pr="40px"
+      pl={{base: "10px", md: "40px"}}
+      pr={{base: "10px", md: "40px"}}
       justify="space-between"
       alignItems="center"
     >
@@ -28,13 +28,9 @@ const Header = (props: user) => {
         <Image sx={logo} src="data/img/logo-C.jpg" alt="logo2"/>
       </Box>
       <HStack alignItems="center" h={{base: "20px",md:"35px"}}>
-        <Wrap>
-          <WrapItem>
-            <Avatar cursor="pointer" size="sm" name="John Doe" src="https://bit.ly/dan-abramov" />
-          </WrapItem>  
-          <Text>{props?.name}</Text>
-          <Icon cursor="pointer" mt="5px" as={MdSettings} color="blue"/>
-        </Wrap>
+        <Avatar cursor="pointer" size="sm" name="John Doe" src="https://bit.ly/dan-abramov" />
+        <Text>{props?.name}</Text>
+        <Icon cursor="pointer" as={MdSettings} color="blue"/> 
       </HStack>
     </Flex>
   );
