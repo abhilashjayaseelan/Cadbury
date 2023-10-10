@@ -1,0 +1,5 @@
+[
+  { "name": "Morning", "value": 40 },
+  { "name": "Afternoon", "value": 10 },
+  { "name": "Evening", "value": 50 }
+]

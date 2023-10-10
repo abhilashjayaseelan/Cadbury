@@ -11,8 +11,6 @@ import {BsCollectionPlay, BsCurrencyPound, BsFillBarChartLineFill} from "react-i
 import {MdOutlineReportProblem, MdOutlineAdminPanelSettings} from "react-icons/md";
 
 
-
-
 const tabs = [
   { label: "Dashboard", to: "/", icon: <BsFillBarChartLineFill/>},
   { label: "Markets", to: "/markets", icon: <SiMarketo/> },

@@ -16,7 +16,7 @@ const ProductRevenue: React.FC<ProductRevenue> = ({
 }) => {
   return (
     <Box as="div">
-      <Grid templateColumns="repeat(3, 1fr)" gap={2} h="80px" pt="2">
+      <Grid templateColumns="repeat(3, 1fr)" gap={2} h="100px" pt="2">
         <GridItem colSpan={1}>
           <Flex padding="8px" justify="space-between">
             <Box>

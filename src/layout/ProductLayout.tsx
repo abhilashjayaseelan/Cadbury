@@ -11,17 +11,17 @@ const ProductLayout = () => {
         </Text>
       </Box>
       <Grid
-        h={{ md: "700px" }}
+        h={{ md: "1000px" }}
         p="10px"
         pl={{ base: "10px", md: "40px" }}
         pr={{ base: "10px", md: "40px" }}
-        templateRows="repeat(7, 1fr)"
+        templateRows="repeat(12, 1fr)"
         templateColumns="repeat(5, 1fr)"
         gap={{ base: 1, md: 4 }}
       >
         <GridItem
           as="aside"
-          rowSpan={5}
+          rowSpan={{base: 3, md: 6}}
           colSpan={{ base: 5, md: 1 }}
           p={{ base: "20px", md: "30px" }}
           shadow='xl'
@@ -33,7 +33,7 @@ const ProductLayout = () => {
             productCategory="Chocolate"
           />
         </GridItem>
-        <GridItem rowSpan={7} colSpan={{ base: 5, md: 4 }}>
+        <GridItem rowSpan={12} colSpan={{ base: 5, md: 4 }}>
           <Outlet />
         </GridItem>
       </Grid>

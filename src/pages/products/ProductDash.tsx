@@ -1,6 +1,9 @@
-import { Grid, GridItem } from "@chakra-ui/react";
+import { Box, Flex, Grid, GridItem, Select, Text } from "@chakra-ui/react";
 import ProductRevenue from "../../components/ProductRevenue";
 import productRevenueData from "../../data/productRevenueData.json";
+import SalesByDayPie from "../../components/SalesByDayPie";
+import UnitsSoldChart from "../../components/UnitsSoldChart";
+import RevenueChart from "../../components/RevenueChart";
 
 interface revenueData {
   units: number;
@@ -14,8 +17,8 @@ const dummyData: revenueData = productRevenueData[0];
 const ProductDash = () => {
   return (
     <Grid
-      h={{ md: "700px" }}
-      templateRows="repeat(7, 1fr)"
+      h={{ md: "900px" }}
+      templateRows="repeat(13, 1fr)"
       templateColumns="repeat(4, 1fr)"
       gap={{ base: 1, md: 4 }}
     >
@@ -26,9 +29,35 @@ const ProductDash = () => {
           revenue={dummyData.revenue}
         />
       </GridItem>
-      <GridItem rowSpan={3} colSpan={1} bg="green" />
-      <GridItem rowSpan={3} colSpan={3} bg="yellow" />
-      <GridItem rowSpan={3} colSpan={4} bg="tomato" />
+      <GridItem rowSpan={1} colSpan={4}>
+        <Flex as="div" mt="18px" gap={8}>
+          <Text fontSize="2xl" fontWeight="bold" textColor="blue">
+            Custom Product Insights
+          </Text>
+          <Box>
+            <Select placeholder="Select option">
+              <option selected value="option1">Last 24 hours</option>
+              <option value="option2">Last year</option>
+            </Select>
+          </Box>
+        </Flex>
+      </GridItem>
+      <GridItem
+        rowSpan={6}
+        colSpan={1}
+        rounded="md"
+        shadow="xl"
+        borderTop="4px"
+        borderColor="blue"
+      >
+        <SalesByDayPie />
+      </GridItem>
+      <GridItem rowSpan={6} colSpan={3} rounded="md" shadow="xl">
+        <UnitsSoldChart/>
+      </GridItem>
+      <GridItem rowSpan={5} colSpan={4} rounded="md" shadow="xl" >
+        <RevenueChart/>
+      </GridItem>
     </Grid>
   );
 };
