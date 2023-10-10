@@ -24,10 +24,10 @@ const Header = (props: user) => {
       borderColor="gray.300"
     >
       <Box>
-        <Image sx={logo} src="data/img/logo-L.jpg" alt="logo"/>
+        <Image sx={logo} src="https://res.cloudinary.com/dgjwhf8i3/image/upload/v1696963813/ipbipmtvd46noxtilitk.jpg" alt="logo"/>
       </Box>
       <Box>
-        <Image sx={logo} src="data/img/logo-C.jpg" alt="logo2"/>
+        <Image sx={logo} src="https://res.cloudinary.com/dgjwhf8i3/image/upload/v1696963819/kzayeyek1bwutbuseqhn.jpg" alt="logo2"/>
       </Box>
       <HStack alignItems="center" h={{base: "20px",md:"35px"}}>
         <Avatar cursor="pointer" size="sm" name="John Doe" src="https://bit.ly/dan-abramov" />

@@ -36,7 +36,7 @@ const ProductSideBar: React.FC<ProductSideBarProps> = ({
     <>
       <Box pb="30px">
         <Image
-          src={productURL ? `data/img/${productURL}.jpg` : ""}
+          src={productURL ? `${productURL}` : ""}
           alt="product"
           pb="20px"
         />

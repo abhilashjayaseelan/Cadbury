@@ -28,7 +28,7 @@ const ProductLayout = () => {
           rounded="md"
         >
           <ProductSideBar
-            productURL="product"
+            productURL="https://res.cloudinary.com/dgjwhf8i3/image/upload/v1696963807/s5tpbdimuhigxqky5g7r.jpg"
             productName="Diary Milk"
             productCategory="Chocolate"
           />
