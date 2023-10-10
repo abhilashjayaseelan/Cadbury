@@ -42,8 +42,7 @@ function SalesByDayPie() {
             cx="50%"
             cy="50%"
             outerRadius={80}
-            fill={dataType === "24-hour" ? "#1070F4" : "#D310F4"}
-            label
+            fill={dataType === "24-hour" ? "#1070F4" : "#1070F4"}
           />
           <Tooltip />
         </PieChart>
