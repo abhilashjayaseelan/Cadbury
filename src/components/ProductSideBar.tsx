@@ -1,4 +1,4 @@
-import { List, ListItem, Wrap, Box, Image, Text } from "@chakra-ui/react";
+import { List, ListItem, Flex, Box, Image, Text } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 
@@ -12,6 +12,18 @@ interface ProductSideBarProps {
   productName: string;
   productCategory: string;
 }
+
+const selectedStyle = {
+  bg: "brand.500",
+  textColor: "white",
+};
+
+const notSelectedStyle = {
+  bg: "white",
+  textColor: "brand.500",
+  border: "1px",
+  borderColor: "brand.500",
+};
 
 const ProductSideBar: React.FC<ProductSideBarProps> = ({
   productURL,
@@ -43,16 +55,13 @@ const ProductSideBar: React.FC<ProductSideBarProps> = ({
               h="40px"
               p="2"
               rounded="md"
-              style={{
-                backgroundColor: selected === "dash" ? "blue" : "white",
-                color: selected === "dash" ? "white" : "blue",
-              }}
+              sx={selected === "dash" ? selectedStyle : notSelectedStyle}
               onClick={() => setSelected("dash")}
             >
-              <Wrap>
+              <Flex alignItems="center" gap="2" ml="12px">
                 <BsFillBarChartLineFill />
                 Dashboard
-              </Wrap>
+              </Flex>
             </Box>
           </NavLink>
         </ListItem>
@@ -63,16 +72,13 @@ const ProductSideBar: React.FC<ProductSideBarProps> = ({
               h="40px"
               p="2"
               rounded="md"
-              style={{
-                backgroundColor: selected === "gen" ? "blue" : "white",
-                color: selected === "gen" ? "white" : "blue",
-              }}
+              sx={selected === "gen" ? selectedStyle : notSelectedStyle}
               onClick={() => setSelected("gen")}
             >
-              <Wrap>
+              <Flex alignItems="center" gap="2" ml="12px">
                 <SiMarketo />
                 General Information
-              </Wrap>
+              </Flex>
             </Box>
           </NavLink>
         </ListItem>
@@ -83,16 +89,13 @@ const ProductSideBar: React.FC<ProductSideBarProps> = ({
               h="40px"
               p="2"
               rounded="md"
-              style={{
-                backgroundColor: selected === "tran" ? "blue" : "white",
-                color: selected === "tran" ? "white" : "blue",
-              }}
+              sx={selected === "tran" ? selectedStyle : notSelectedStyle}
               onClick={() => setSelected("tran")}
             >
-              <Wrap>
+              <Flex alignItems="center" gap="2" ml="12px">
                 <FaListUl />
                 Transactions
-              </Wrap>
+              </Flex>
             </Box>
           </NavLink>
         </ListItem>
@@ -103,16 +106,13 @@ const ProductSideBar: React.FC<ProductSideBarProps> = ({
               h="40px"
               p="2"
               rounded="md"
-              style={{
-                backgroundColor: selected === "pricing" ? "blue" : "white",
-                color: selected === "pricing" ? "white" : "blue",
-              }}
+              sx={selected === "pricing" ? selectedStyle : notSelectedStyle}
               onClick={() => setSelected("pricing")}
             >
-              <Wrap>
+              <Flex alignItems="center" gap="2" ml="12px">
                 <BsCurrencyPound />
                 Pricing
-              </Wrap>
+              </Flex>
             </Box>
           </NavLink>
         </ListItem>
@@ -123,16 +123,13 @@ const ProductSideBar: React.FC<ProductSideBarProps> = ({
               h="40px"
               p="2"
               rounded="md"
-              style={{
-                backgroundColor: selected === "pro" ? "blue" : "white",
-                color: selected === "pro" ? "white" : "blue",
-              }}
+              sx={selected === "pro" ? selectedStyle : notSelectedStyle}
               onClick={() => setSelected("pro")}
             >
-              <Wrap>
+              <Flex alignItems="center" gap="2" ml="12px">
                 <RiShapesLine />
                 Product features
-              </Wrap>
+              </Flex>
             </Box>
           </NavLink>
         </ListItem>

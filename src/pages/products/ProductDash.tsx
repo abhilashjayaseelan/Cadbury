@@ -42,14 +42,15 @@ const ProductDash = () => {
           revenue={dummyData.revenue}
         />
       </GridItem>
-      <GridItem rowSpan={1} colSpan={4}>
+      <GridItem rowSpan={{md: 1}} colSpan={{base:4, md: 4}}>
         <Flex as="div" mt="18px" gap={8}>
-          <Text fontSize="2xl" fontWeight="bold" textColor="blue">
+          <Text fontSize="2xl" fontWeight="bold" textColor="brand.500">
             Custom Product Insights
           </Text>
           <Box>
             <Select
               placeholder="Select option"
+              iconColor="brand.500"
               onChange={() =>
                 handleTypeChange(dataType === "1-year" ? "24-hour" : "1-year")
               }
@@ -64,15 +65,15 @@ const ProductDash = () => {
       </GridItem>
       <GridItem
         rowSpan={6}
-        colSpan={1}
+        colSpan={{base: 4, md: 1}}
         rounded="md"
         shadow="xl"
         borderTop="4px"
-        borderColor="blue"
+        borderColor="brand.500"
       >
         <SalesByDayPie />
       </GridItem>
-      <GridItem rowSpan={6} colSpan={3} rounded="md" shadow="xl">
+      <GridItem rowSpan={6} colSpan={{base: 1, md: 3}} rounded="md" shadow="xl">
         <UnitsSoldChart />
       </GridItem>
       <GridItem rowSpan={5} colSpan={4} rounded="md" shadow="xl">

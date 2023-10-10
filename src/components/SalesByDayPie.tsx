@@ -28,8 +28,8 @@ function SalesByDayPie() {
           <Text fontSize="sm" fontWeight="semibold" textColor="black">
             Sales by the day
           </Text>
-          <Text fontSize="sm" fontWeight="semibold" textColor="gray.300">
-            {dataType === "24-hour" ? `(Last 24 hour)` : `(Last 1 year)`}
+          <Text fontSize="sm" fontWeight="semibold" textColor="gray.500">
+          {dataType === "1-year" ? `(Last 1 year)` : `(Last 24 hours)`}
           </Text>
         </Flex>
       </Box>
@@ -42,7 +42,7 @@ function SalesByDayPie() {
             cx="50%"
             cy="50%"
             outerRadius={80}
-            fill={dataType === "24-hour" ? "#1070F4" : "#1070F4"}
+            fill={dataType === "24-hour" ? "#4d92ff" : "#1070F4"}
           />
           <Tooltip />
         </PieChart>

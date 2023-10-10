@@ -36,8 +36,8 @@ const UnitsSoldChart = () => {
           <Text fontSize="sm" fontWeight="semibold" textColor="black">
             Units Sold
           </Text>
-          <Text fontSize="sm" fontWeight="semibold" textColor="gray.300">
-            {dataType === "24-hour" ? `(Last 24 hour)` : `(Last 1 year)`}
+          <Text fontSize="sm" fontWeight="semibold" textColor="gray.500">
+          {dataType === "1-year" ? `(Last 1 year)` : `(Last 24 hours)`}
           </Text>
         </Flex>
       </Box>
@@ -60,7 +60,7 @@ const UnitsSoldChart = () => {
           <Legend />
           <Bar
             dataKey="units"
-            fill={dataType === "24-hour" ? "#A7E510" : "#F43110"}
+            fill={dataType === "24-hour" ? "#0063ff" : "#0063ff"}
           />
         </BarChart>
       </Box>

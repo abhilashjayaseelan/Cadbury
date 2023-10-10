@@ -17,13 +17,17 @@ const ProductRevenue: React.FC<ProductRevenue> = ({
   return (
     <Box as="div">
       <Grid templateColumns="repeat(3, 1fr)" gap={2} h="100px" pt="2">
-        <GridItem colSpan={1}>
+        <GridItem colSpan={{ base: 3, md: 1 }}>
           <Flex padding="8px" justify="space-between">
-            <Box>
+            <Box pl='2'>
               <Text fontSize={{ base: "sm", md: "md" }} fontWeight="semibold">
                 Units Sold Today
               </Text>
-              <Text fontSize={{ base: "md", md: "lg" }} fontWeight="bold">
+              <Text
+                fontSize={{ base: "md", md: "xl" }}
+                fontWeight="bold"
+                pt="10px"
+              >
                 {units}
               </Text>
             </Box>
@@ -38,36 +42,47 @@ const ProductRevenue: React.FC<ProductRevenue> = ({
           borderLeft={{ md: "2px" }}
           borderRight={{ md: "2px" }}
           borderColor={{ md: "gray.300" }}
-          colSpan={1}
+          colSpan={{ base: 3, md: 1 }}
         >
           <Flex padding="8px" justify="space-between">
-            <Box>
+            <Box pl='2'>
               <Text fontSize={{ base: "sm", md: "md" }} fontWeight="semibold">
                 Machines Carrying Products
               </Text>
-              <Text fontSize={{ base: "md", md: "lg" }} fontWeight="bold">
+              <Text
+                fontSize={{ base: "md", md: "xl" }}
+                fontWeight="bold"
+                pt="10px"
+              >
                 {machines}
               </Text>
             </Box>
             <Box>
-              <Text fontSize="5xl" textColor="blue.500">
+              <Text fontSize="5xl" textColor="brand.500">
                 <MdOutlineGroupWork />
               </Text>
             </Box>
           </Flex>
         </GridItem>
-        <GridItem colSpan={1}>
+        <GridItem colSpan={{ base: 3, md: 1 }}>
           <Flex padding="8px" justify="space-between">
             <Box>
               <Text fontSize={{ base: "sm", md: "md" }} fontWeight="semibold">
                 Total Revenue
               </Text>
-              <Text fontSize={{ base: "md", md: "lg" }} fontWeight="bold">
-                <BsCurrencyPound/>{revenue} 
+              <Text
+                fontSize={{ base: "md", md: "xl" }}
+                fontWeight="bold"
+                pt="10px"
+              >
+                <Flex alignItems="center">
+                  <BsCurrencyPound />
+                  {revenue}
+                </Flex>
               </Text>
             </Box>
             <Box>
-              <Text fontSize="5xl" textColor="green.500">
+              <Text fontSize="5xl" textColor="green.400">
                 <BsCurrencyPound />
               </Text>
             </Box>

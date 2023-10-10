@@ -28,18 +28,17 @@ const tabs = [
 
 const TopNav = () => {
   return (
-    <Flex as="nav" p="10px" overflowX="auto">
+    <Flex as="nav" p="10px" overflowX="auto" shadow='md'>
       <Tabs
         size={{ base: "sm", md: "md" }}
         variant="soft-rounded"
-        colorScheme="blue"
       >
         <TabList>
           {tabs.map((tab, index) => (
             <Tab w={{ md: "120px" }} key={index}>
               <NavLink to={tab?.to}>
                 <Box display="flex" alignItems="center">
-                  <Box mr="2" color="blue">{tab?.icon}</Box>
+                  <Box mr="2" color="brand.500">{tab?.icon}</Box>
                   <Text fontSize='sm'>{tab?.label}</Text>  
                 </Box>
               </NavLink>

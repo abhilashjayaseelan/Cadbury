@@ -36,8 +36,8 @@ const RevenueChart = () => {
           <Text fontSize="sm" fontWeight="semibold" textColor="black">
             Revenue
           </Text>
-          <Text fontSize="sm" fontWeight="semibold" textColor="gray.300">
-            {dataType === "24-hour" ? `(Last 24 hour)` : `(Last 1 year)`}
+          <Text fontSize="sm" fontWeight="semibold" textColor="gray.500">
+            {dataType === "1-year" ? `(Last 1 year)` : `(Last 24 hours)`}
           </Text>
         </Flex>
       </Box>
@@ -60,7 +60,7 @@ const RevenueChart = () => {
           <Legend />
           <Bar
             dataKey="revenue"
-            fill={dataType === "24-hour" ? "#10BEE5" : "#10E5B5 "}
+            fill={dataType === "24-hour" ? "#10E5B5" : "#00cd4d"}
           />
         </BarChart>
       </Box>

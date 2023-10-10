@@ -31,8 +31,8 @@ const Header = (props: user) => {
       </Box>
       <HStack alignItems="center" h={{base: "20px",md:"35px"}}>
         <Avatar cursor="pointer" size="sm" name="John Doe" src="https://bit.ly/dan-abramov" />
-        <Text>{props?.name}</Text>
-        <Icon cursor="pointer" as={MdSettings} color="blue"/> 
+        <Text color="brand.500" fontWeight='semibold'>{props?.name}</Text>
+        <Icon cursor="pointer" as={MdSettings} color="brand.500"/> 
       </HStack>
     </Flex>
   );

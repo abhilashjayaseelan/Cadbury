@@ -6,7 +6,7 @@ const ProductLayout = () => {
   return (
     <div>
       <Box as="div" mt="20px" pl={{ base: "10px", md: "40px" }}>
-        <Text fontSize="2xl" fontWeight="bold" color="blue">
+        <Text fontSize="2xl" fontWeight="bold" color="brand.500">
           Product Details
         </Text>
       </Box>
@@ -21,11 +21,11 @@ const ProductLayout = () => {
       >
         <GridItem
           as="aside"
-          rowSpan={{base: 3, md: 6}}
+          rowSpan={{ base: 3, md: 7 }}
           colSpan={{ base: 5, md: 1 }}
           p={{ base: "20px", md: "30px" }}
-          shadow='xl'
-          rounded='md'
+          shadow='lg'
+          rounded="md"
         >
           <ProductSideBar
             productURL="product"
