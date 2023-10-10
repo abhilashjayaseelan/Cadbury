@@ -1,9 +1,13 @@
 import { Box, Flex, Grid, GridItem, Select, Text } from "@chakra-ui/react";
+import { useDispatch, useSelector } from "react-redux";
+
 import ProductRevenue from "../../components/ProductRevenue";
 import productRevenueData from "../../data/productRevenueData.json";
 import SalesByDayPie from "../../components/SalesByDayPie";
 import UnitsSoldChart from "../../components/UnitsSoldChart";
 import RevenueChart from "../../components/RevenueChart";
+import { changeData } from "../../redux/dashboardDataSlice";
+import { RootState } from "../../redux/reducer";
 
 interface revenueData {
   units: number;
@@ -15,6 +19,15 @@ interface revenueData {
 const dummyData: revenueData = productRevenueData[0];
 
 const ProductDash = () => {
+  const dispatch = useDispatch();
+  const dataType = useSelector(
+    (state: RootState) => state.dashboardDetails.dataType
+  );
+
+  function handleTypeChange(type: string) {
+    dispatch(changeData(type));
+  }
+
   return (
     <Grid
       h={{ md: "900px" }}
@@ -35,8 +48,15 @@ const ProductDash = () => {
             Custom Product Insights
           </Text>
           <Box>
-            <Select placeholder="Select option">
-              <option selected value="option1">Last 24 hours</option>
+            <Select
+              placeholder="Select option"
+              onChange={() =>
+                handleTypeChange(dataType === "1-year" ? "24-hour" : "1-year")
+              }
+            >
+              <option selected value="option1">
+                Last 24 hours
+              </option>
               <option value="option2">Last year</option>
             </Select>
           </Box>
@@ -53,10 +73,10 @@ const ProductDash = () => {
         <SalesByDayPie />
       </GridItem>
       <GridItem rowSpan={6} colSpan={3} rounded="md" shadow="xl">
-        <UnitsSoldChart/>
+        <UnitsSoldChart />
       </GridItem>
-      <GridItem rowSpan={5} colSpan={4} rounded="md" shadow="xl" >
-        <RevenueChart/>
+      <GridItem rowSpan={5} colSpan={4} rounded="md" shadow="xl">
+        <RevenueChart />
       </GridItem>
     </Grid>
   );

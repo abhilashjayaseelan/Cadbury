@@ -1,11 +1,26 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
-import { PieChart, Pie, Tooltip, } from "recharts";
-import salesByDay from "../data/salesByDayPie.json";
+import { PieChart, Pie, Tooltip } from "recharts";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../redux/reducer";
 
-//dummy data
-const data01 = salesByDay;
+import salesByDay from "../data/salesByDayPie.json";
+import salesByYear from "../data/salesByYear.json";
 
 function SalesByDayPie() {
+  const [units, setUnits] = useState(salesByDay);
+  const dataType = useSelector(
+    (state: RootState) => state.dashboardDetails.dataType
+  );
+
+  useEffect(() => {
+    if (dataType === "24-hour") {
+      setUnits(salesByDay);
+    } else if (dataType === "1-year") {
+      setUnits(salesByYear);
+    }
+  }, [dataType]);
+
   return (
     <>
       <Box p="10px">
@@ -14,7 +29,7 @@ function SalesByDayPie() {
             Sales by the day
           </Text>
           <Text fontSize="sm" fontWeight="semibold" textColor="gray.300">
-            (Last 24 hours)
+            {dataType === "24-hour" ? `(Last 24 hour)` : `(Last 1 year)`}
           </Text>
         </Flex>
       </Box>
@@ -23,11 +38,11 @@ function SalesByDayPie() {
           <Pie
             dataKey="value"
             isAnimationActive={false}
-            data={data01}
+            data={units}
             cx="50%"
             cy="50%"
             outerRadius={80}
-            fill="#1070F4"
+            fill={dataType === "24-hour" ? "#1070F4" : "#D310F4"}
             label
           />
           <Tooltip />

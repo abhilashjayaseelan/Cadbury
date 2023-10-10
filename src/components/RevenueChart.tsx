@@ -1,4 +1,7 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../redux/reducer";
 import {
   BarChart,
   Bar,
@@ -8,11 +11,24 @@ import {
   Tooltip,
   Legend,
 } from "recharts";
-import revenue from "../data/revenueDayData.json";
 
-const revenueData = revenue;
+import revenueDay from "../data/revenueDayData.json";
+import revenueYear from "../data/revenueYearData.json";
 
 const RevenueChart = () => {
+  const [revenueData, setRevenueData] = useState(revenueDay);
+  const dataType = useSelector(
+    (state: RootState) => state.dashboardDetails.dataType
+  );
+
+  useEffect(() => {
+    if (dataType === "24-hour") {
+      setRevenueData(revenueDay);
+    } else if (dataType === "1-year") {
+      setRevenueData(revenueYear);
+    }
+  }, [dataType]);
+
   return (
     <>
       <Box p="10px">
@@ -21,11 +37,11 @@ const RevenueChart = () => {
             Revenue
           </Text>
           <Text fontSize="sm" fontWeight="semibold" textColor="gray.300">
-            (Last 24 hours)
+            {dataType === "24-hour" ? `(Last 24 hour)` : `(Last 1 year)`}
           </Text>
         </Flex>
       </Box>
-      <Box pt={{base:'10px', md: '30px'}} pl='20'>
+      <Box pt={{ base: "10px", md: "30px" }} pl="20">
         <BarChart
           width={900}
           height={250}
@@ -38,11 +54,14 @@ const RevenueChart = () => {
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
+          <XAxis dataKey="time" />
           <YAxis />
           <Tooltip />
           <Legend />
-          <Bar dataKey="revenue" fill="#10F46A " />
+          <Bar
+            dataKey="revenue"
+            fill={dataType === "24-hour" ? "#10BEE5" : "#10E5B5 "}
+          />
         </BarChart>
       </Box>
     </>

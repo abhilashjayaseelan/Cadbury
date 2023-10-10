@@ -1,0 +1,15 @@
+[
+    { "time": 1, "units": 4000 },
+    { "time": 2, "units": 2500 },
+    { "time": 3, "units": 3500},
+    { "time": 4, "units": 1000 },
+    { "time": 5, "units": 1500 },
+    { "time": 6, "units": 2000 },
+    { "time": 7, "units": 2000 },
+    { "time": 8, "units": 500 },
+    { "time": 9, "units": 1500 },
+    { "time": 10, "units": 1000 },
+    { "time": 11, "units": 5000 },
+    { "time": 12, "units": 3000 }
+  ]
+  
